@@ -1,0 +1,11 @@
+--type-set=haml=.haml
+--type-set=sass=.sass
+--type-set=scss=.scss
+--type-set=erb=.erb
+--type-set=str=.str
+--type-set=coffee=.coffee
+--ignore-dir=parsed_src
+--ignore-dir=smarty
+--ignore-dir=Smarty
+--ignore-dir=xpdo-core
+
