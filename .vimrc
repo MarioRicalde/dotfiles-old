@@ -2,7 +2,7 @@
 ""
 runtime bundle/core/pathogen/autoload/pathogen.vim
 
-for path in ["core","text-helpers", "helpers", "syntax", "theme"]
+for path in ["core","text-helpers", "helpers", "syntax", "theme", "experiment"]
   call pathogen#infect("~/.vim/bundle/" . path)
 endfor
 
