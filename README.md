@@ -1,6 +1,6 @@
 # How it Looks
 
-![Screenshot](hhttp://is.gd/MSsch)
+![Screenshot](http://is.gd/MSsch)
 
 # Installation Instructions
 
