@@ -1,6 +1,6 @@
 # How it Looks
 
-![Screenshot](http://is.gd/MSsch)
+![Screenshot](https://dl.dropbox.com/u/4651065/screenshots/2012/11/22-18h40m56s.png)
 
 # Installation Instructions
 
