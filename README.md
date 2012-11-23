@@ -12,7 +12,7 @@
     ln -s ~/dotfiles/.vimrc ~/.vimrc
     ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 
-# Adding More Bundles
+# Adding More Modules
 
     git submodule add https://github.com/someone/something.vim.git .vim/bundle/helpers/something
 
