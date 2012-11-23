@@ -1,6 +1,6 @@
 # How it Looks
 
-![Screenshot](http://is.gd/XzLpF9)
+![Screenshot](hhttp://is.gd/MSsch)
 
 # Installation Instructions
 
@@ -15,4 +15,11 @@
 # Adding More Bundles
 
     git submodule add https://github.com/someone/something.vim.git .vim/bundle/helpers/something
+
+# Want to contribute?
+
+Justs fork and do your thing. If you want me to merge into master, let me know.
+
+If you want to have your own plugins that you don't think anyone else will want
+place them inside `experimental` directory.
 
