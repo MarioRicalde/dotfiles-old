@@ -85,3 +85,6 @@
 [submodule ".vim/bundle/text-helpers/tabular"]
 	path = .vim/bundle/text-helpers/tabular
 	url = http://github.com/godlygeek/tabular.git
+[submodule ".vim/bundle/helpers/stab"]
+	path = .vim/bundle/helpers/stab
+	url = git@github.com:kuroir/stab.vim.git

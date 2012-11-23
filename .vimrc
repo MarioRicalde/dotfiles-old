@@ -15,7 +15,6 @@ filetype plugin indent on " filetype detection[ON] plugin[ON] indent[ON]
 set hidden   " Allow Buffers to be hidden without save.
 set history=10000 " Command History
 set t_ti= t_te= " Prevent Vim from clobbering the scrollback buffer.
-filetype plugin indent on
 set shell=/bin/sh
 set mouse=a                     "Support for mouse
 set synmaxcol=2048 " Syntax coloring lines that are too long just slows down the world
@@ -55,9 +54,10 @@ set linebreak
 set nolist
 set textwidth=0 wrapmargin=0    " prevent wrapping newly inserted text
 set formatoptions+=l            " keep your existing 'textwidth' settings
-set tabstop=2 shiftwidth=2      " a tab is two spaces
-set showbreak=\ \               " Break
+set shiftwidth=2                " a tab is two spaces
+set softtabstop=2               " backspace deletes two spaces.
 set expandtab                   " use spaces, not tabs
+set showbreak=\ \               " Break
 set backspace=indent,eol,start  " backspace through everything in insert mode
 set autoindent                  " automatically indent
 set scrolloff=3                 " don't show search results as the first line
@@ -95,8 +95,11 @@ colorscheme solarized
 ""
 au FileType make setlocal noexpandtab " In Makefiles, use real tabs, not tabs expanded to spaces
 au BufNewFile,BufRead *.json set ft=javascript "
-"" make Python follow PEP8 for whitespace ( http://www.python.org/dev/peps/pep-0008/ )
-au FileType python setlocal softtabstop=4 tabstop=4 shiftwidth=4
+au FileType python call StabHard(4)
+au FileType php call StabHard(4)
+au FileType html call StabHard(4)
+au FileType tpl call StabHard(4)
+
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
 au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
