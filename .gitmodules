@@ -94,3 +94,6 @@
 [submodule ".vim/bundle/helpers/IndentConsistencyCopCmds"]
 	path = .vim/bundle/helpers/IndentConsistencyCopCmds
 	url = https://github.com/vim-scripts/IndentConsistencyCopAutoCmds
+[submodule ".vim/bundle/core/bufexplorer"]
+	path = .vim/bundle/core/bufexplorer
+	url = git@github.com:kuroir/bufexplorer.zip.git
