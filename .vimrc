@@ -28,6 +28,7 @@ let g:Powerline_symbols='fancy'
 let g:Powerline_colorscheme='solarized'
 let mapleader = ","  " <leader> keys
 set timeoutlen=350 " Timout wait for <leader> keys
+set cursorline
 
 "" Wild settings
 ""
