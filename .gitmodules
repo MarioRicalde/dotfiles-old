@@ -97,3 +97,6 @@
 [submodule ".vim/bundle/core/bufexplorer"]
 	path = .vim/bundle/core/bufexplorer
 	url = git@github.com:kuroir/bufexplorer.zip.git
+[submodule ".vim/bundle/text-helpers/SpeedDating"]
+	path = .vim/bundle/text-helpers/SpeedDating
+	url = git://github.com/tpope/vim-speeddating.git
