@@ -407,3 +407,7 @@ let g:indentconsistencycop_CheckOnLoad = 0
 
 " IndentGuides
 let g:indent_guides_enable_on_vim_startup = 1
+
+" Colorizer
+let g:colorizer_auto_filetype='css,scss,sass,html,haml,tpl,js,coffee'
+

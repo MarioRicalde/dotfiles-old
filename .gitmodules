@@ -109,3 +109,6 @@
 [submodule ".vim/bundle/syntax/jquery"]
 	path = .vim/bundle/syntax/jquery
 	url = git://github.com/itspriddle/vim-jquery.git
+[submodule ".vim/bundle/text-helpers/ColorHighlight"]
+	path = .vim/bundle/text-helpers/ColorHighlight
+	url = git://github.com/chrisbra/color_highlight.git
