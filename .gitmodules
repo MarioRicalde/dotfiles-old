@@ -106,3 +106,6 @@
 [submodule ".vim/bundle/theme/IndentGuide"]
 	path = .vim/bundle/theme/IndentGuide
 	url = git://github.com/nathanaelkane/vim-indent-guides.git
+[submodule ".vim/bundle/syntax/jquery"]
+	path = .vim/bundle/syntax/jquery
+	url = git://github.com/itspriddle/vim-jquery.git
