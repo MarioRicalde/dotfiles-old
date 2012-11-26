@@ -100,3 +100,9 @@
 [submodule ".vim/bundle/text-helpers/SpeedDating"]
 	path = .vim/bundle/text-helpers/SpeedDating
 	url = git://github.com/tpope/vim-speeddating.git
+[submodule ".vim/bundle/core/IndexedSearch"]
+	path = .vim/bundle/core/IndexedSearch
+	url = git://github.com/skwp/vim-indexed-search.git
+[submodule ".vim/bundle/theme/IndentGuide"]
+	path = .vim/bundle/theme/IndentGuide
+	url = git://github.com/nathanaelkane/vim-indent-guides.git
