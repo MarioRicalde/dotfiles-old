@@ -401,3 +401,6 @@ function! BeQuickOpen()
     echo "Hello BufferExplorer"
   endif
 endfunction
+
+" IndentConsistencyCopAutoCMD
+let g:indentconsistencycop_CheckOnLoad = 0
