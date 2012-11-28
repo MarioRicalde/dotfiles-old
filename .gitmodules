@@ -118,3 +118,6 @@
 [submodule ".vim/bundle/helpers/NrrwRgn"]
 	path = .vim/bundle/helpers/NrrwRgn
 	url = git://github.com/chrisbra/NrrwRgn.git
+[submodule ".vim/bundle/helpers/NerdCommenter"]
+	path = .vim/bundle/helpers/NerdCommenter
+	url = git://github.com/scrooloose/nerdcommenter.git
