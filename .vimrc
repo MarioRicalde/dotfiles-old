@@ -15,7 +15,6 @@ filetype plugin indent on " filetype detection[ON] plugin[ON] indent[ON]
 set hidden   " Allow Buffers to be hidden without save.
 set history=10000 " Command History
 set t_ti= t_te= " Prevent Vim from clobbering the scrollback buffer.
-set shell=/bin/zsh
 set mouse=a                     "Support for mouse
 set synmaxcol=2048 " Syntax coloring lines that are too long just slows down the world
 set switchbuf=useopen          " How New Buffers Open [split, newtab, useopen]
@@ -29,6 +28,7 @@ let g:Powerline_colorscheme='solarized'
 let mapleader = ","  " <leader> keys
 set timeoutlen=350 " Timout wait for <leader> keys
 set cursorline
+set shell=/bin/zsh   " TODO Figure out a conditional for this.
 
 "" Wild settings
 ""
