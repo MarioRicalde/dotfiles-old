@@ -11,6 +11,7 @@
     ln -s ~/dotfiles/.ackrc ~/.ackrc
     ln -s ~/dotfiles/.vimrc ~/.vimrc
     ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
+    ln -s ~/dotfiles/.gitignore ~/.gitignore
 
 # Adding More Modules
 
