@@ -88,9 +88,11 @@ map <TAB> :BufExplorer<CR>
 ""
 "" Theme Settings
 ""
-set background=light
+set background=dark
 colorscheme solarized
 
+command Light !echo -e '\033]50;SetProfile=Light\aColor Scheme Changed'
+command Dark !echo -e '\033]50;SetProfile=Dark\aColor Scheme Changed'
 ""
 "" FileTypes Preferences
 ""
@@ -99,7 +101,7 @@ au BufNewFile,BufRead *.json set ft=javascript "
 au FileType python call StabHard(4)
 au FileType php call StabHard(4)
 au FileType html call StabHard(4)
-au FileType tpl call StabHard(4)
+au FileType smarty call StabHard(4)
 
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
@@ -407,8 +409,10 @@ endfunction
 let g:indentconsistencycop_CheckOnLoad = 0
 
 " IndentGuides
-let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_enable_on_vim_startup = 0
 
 " Colorizer
 let g:colorizer_auto_filetype='css,scss,sass,html,haml,tpl,js,coffee'
 
+" EasyMotion
+let g:EasyMotion_leader_key = '<Leader>'
