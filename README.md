@@ -14,6 +14,10 @@
     ln -s ~/dotfiles/.gitignore ~/.gitignore
     git config --global core.excludesfile
 
+# Updating Modules
+
+    git submodule foreach git pull origin master
+
 # Adding More Modules
 
     git submodule add https://github.com/someone/something.vim.git .vim/bundle/helpers/something
