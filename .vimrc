@@ -24,7 +24,7 @@ set t_Co=256              " enable 256-color mode.
 let &winheight = &lines * 2 / 10 " Set the window minimum height
 set laststatus=2
 let g:Powerline_symbols='fancy'
-let g:Powerline_colorscheme='solarized'
+let g:Powerline_colorscheme='solarizedDark'
 let mapleader = ","  " <leader> keys
 set timeoutlen=350 " Timout wait for <leader> keys
 set cursorline
@@ -416,3 +416,5 @@ let g:colorizer_auto_filetype='css,scss,sass,html,haml,tpl,js,coffee'
 
 " EasyMotion
 let g:EasyMotion_leader_key = '<Leader>'
+hi link EasyMotionTarget Identifier
+hi link EasyMotionShade  Comment
