@@ -23,9 +23,6 @@ set ttyfast  " Fast Terminal, sends more characters.
 set t_Co=256              " enable 256-color mode.
 let &winheight = &lines * 2 / 10 " Set the window minimum height
 set laststatus=2
-let g:Powerline_symbols='fancy'
-let g:Powerline_colorscheme='solarizedDark'
-let mapleader = ","  " <leader> keys
 set timeoutlen=350 " Timout wait for <leader> keys
 set cursorline
 set shell=/bin/zsh   " TODO Figure out a conditional for this.
@@ -88,8 +85,13 @@ map <TAB> :BufExplorer<CR>
 ""
 "" Theme Settings
 ""
-set background=dark
 colorscheme solarized
+set background=dark
+let g:Powerline_symbols='fancy'
+let g:Powerline_colorscheme='solarizedDark'
+let mapleader = ","  " <leader> keys
+hi IndentGuidesOdd ctermbg=black
+"hi IndentGuidesEven ctermbg=lightgrey " Light Color Scheme
 
 command Light !echo -e '\033]50;SetProfile=Light\aColor Scheme Changed'
 command Dark !echo -e '\033]50;SetProfile=Dark\aColor Scheme Changed'
@@ -409,7 +411,8 @@ endfunction
 let g:indentconsistencycop_CheckOnLoad = 0
 
 " IndentGuides
-let g:indent_guides_enable_on_vim_startup = 0
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 0 " Dark Color Scheme
 
 " Colorizer
 let g:colorizer_auto_filetype='css,scss,sass,html,haml,tpl,js,coffee'
@@ -418,3 +421,4 @@ let g:colorizer_auto_filetype='css,scss,sass,html,haml,tpl,js,coffee'
 let g:EasyMotion_leader_key = '<Leader>'
 hi link EasyMotionTarget Identifier
 hi link EasyMotionShade  Comment
+
