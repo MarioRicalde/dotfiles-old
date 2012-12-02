@@ -90,7 +90,8 @@ set background=dark
 let g:Powerline_symbols='fancy'
 let g:Powerline_colorscheme='solarizedDark'
 let mapleader = ","  " <leader> keys
-hi IndentGuidesOdd ctermbg=black
+hi IndentGuidesOdd ctermbg=0
+hi IndentGuidesEven ctermbg=8
 "hi IndentGuidesEven ctermbg=lightgrey " Light Color Scheme
 
 command Light !echo -e '\033]50;SetProfile=Light\aColor Scheme Changed'
@@ -151,6 +152,9 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 "" Add a line above or below current line
 nnoremap <leader>O :set paste<CR>m`O<Esc>``:set nopaste<CR>
 nnoremap <leader>o :set paste<CR>m`o<Esc>``:set nopaste<CR>
+
+" Switch Folds
+noremap <F1> za
 
 " use :w!! to write to a file using sudo if you forgot to 'sudo vim file'
 cmap w!! %!sudo tee > /dev/null %
