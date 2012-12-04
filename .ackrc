@@ -2,6 +2,7 @@
 --type-set=sass=.sass
 --type-set=scss=.scss
 --type-set=erb=.erb
+--type-set=tpl=.tpl
 --type-set=str=.str
 --type-set=coffee=.coffee
 --ignore-dir=parsed_src

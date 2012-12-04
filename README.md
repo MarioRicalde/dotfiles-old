@@ -11,6 +11,12 @@
     ln -s ~/dotfiles/.ackrc ~/.ackrc
     ln -s ~/dotfiles/.vimrc ~/.vimrc
     ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
+    ln -s ~/dotfiles/.gitignore ~/.gitignore
+    git config --global core.excludesfile
+
+# Updating Modules
+
+    git submodule foreach git pull origin master
 
 # Make sure you're using vim that has Python
 

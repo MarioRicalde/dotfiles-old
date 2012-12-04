@@ -15,7 +15,6 @@ filetype plugin indent on " filetype detection[ON] plugin[ON] indent[ON]
 set hidden   " Allow Buffers to be hidden without save.
 set history=10000 " Command History
 set t_ti= t_te= " Prevent Vim from clobbering the scrollback buffer.
-set shell=/bin/zsh
 set mouse=a                     "Support for mouse
 set synmaxcol=2048 " Syntax coloring lines that are too long just slows down the world
 set switchbuf=useopen          " How New Buffers Open [split, newtab, useopen]
@@ -24,11 +23,9 @@ set ttyfast  " Fast Terminal, sends more characters.
 set t_Co=256              " enable 256-color mode.
 let &winheight = &lines * 2 / 10 " Set the window minimum height
 set laststatus=2
-let g:Powerline_symbols='fancy'
-let g:Powerline_colorscheme='solarized'
-let mapleader = ","  " <leader> keys
 set timeoutlen=350 " Timout wait for <leader> keys
 set cursorline
+set shell=/bin/zsh   " TODO Figure out a conditional for this.
 
 "" Wild settings
 ""
@@ -88,9 +85,20 @@ map <TAB> :BufExplorer<CR>
 ""
 "" Theme Settings
 ""
+<<<<<<< HEAD
 set background=dark
+=======
+>>>>>>> 0a5773751d04259b0c1698d0f647d68798d350e2
 colorscheme solarized
+set background=dark
+let g:Powerline_symbols='fancy'
+let g:Powerline_colorscheme='solarizedDark'
+let mapleader = ","  " <leader> keys
+hi IndentGuidesOdd ctermbg=black
+"hi IndentGuidesEven ctermbg=lightgrey " Light Color Scheme
 
+command Light !echo -e '\033]50;SetProfile=Light\aColor Scheme Changed'
+command Dark !echo -e '\033]50;SetProfile=Dark\aColor Scheme Changed'
 ""
 "" FileTypes Preferences
 ""
@@ -99,7 +107,7 @@ au BufNewFile,BufRead *.json set ft=javascript "
 au FileType python call StabHard(4)
 au FileType php call StabHard(4)
 au FileType html call StabHard(4)
-au FileType tpl call StabHard(4)
+au FileType smarty call StabHard(4)
 
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
@@ -408,7 +416,13 @@ let g:indentconsistencycop_CheckOnLoad = 0
 
 " IndentGuides
 let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 0 " Dark Color Scheme
 
 " Colorizer
 let g:colorizer_auto_filetype='css,scss,sass,html,haml,tpl,js,coffee'
+
+" EasyMotion
+let g:EasyMotion_leader_key = '<Leader>'
+hi link EasyMotionTarget Identifier
+hi link EasyMotionShade  Comment
 
