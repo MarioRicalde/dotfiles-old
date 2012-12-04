@@ -105,6 +105,8 @@ au FileType python call StabHard(4)
 au FileType php call StabHard(4)
 au FileType html call StabHard(4)
 au FileType smarty call StabHard(4)
+au BufRead,BufNewFile *.scss set filetype=scss
+au FileType css,scss,html,haml setlocal isk+=- 
 
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
