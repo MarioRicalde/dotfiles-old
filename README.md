@@ -18,6 +18,16 @@
 
     git submodule foreach git pull origin master
 
+# Make sure you're using vim that has Python
+
+    In order to avoid errors, you should use brew installed vim.
+    brew list
+    brew install vim
+      it might ask you to do
+    brew install mercurial
+      which is a dependency.
+
+
 # Adding More Modules
 
     git submodule add https://github.com/someone/something.vim.git .vim/bundle/helpers/something
