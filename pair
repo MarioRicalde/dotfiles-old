@@ -1,9 +1,9 @@
 #!/bin/sh
 
-tmux -S /tmp/pair.socket has-session -t pair
+tmux has-session -t pair
 if [[ $? == 1 ]] ; then
-  tmux -S /tmp/pair.socket new-session -d -s pair -n Vim
-  tmux -S /tmp/pair.socket select-window -t pair:Vim
+  tmux new-session -d -s pair -n Vim
+  tmux select-window -t pair:Vim
 fi
-tmux -S /tmp/pair.socket -2 attach -t pair
+tmux attach -t pair
 
