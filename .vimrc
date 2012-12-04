@@ -88,7 +88,7 @@ map <TAB> :BufExplorer<CR>
 ""
 "" Theme Settings
 ""
-set background=light
+set background=dark
 colorscheme solarized
 
 ""
