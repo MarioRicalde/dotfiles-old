@@ -85,10 +85,6 @@ map <TAB> :BufExplorer<CR>
 ""
 "" Theme Settings
 ""
-<<<<<<< HEAD
-set background=dark
-=======
->>>>>>> 0a5773751d04259b0c1698d0f647d68798d350e2
 colorscheme solarized
 set background=dark
 let g:Powerline_symbols='fancy'
