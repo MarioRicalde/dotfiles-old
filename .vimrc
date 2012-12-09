@@ -39,7 +39,7 @@ set wildignore+=*/.AppleDouble*,*/templates_cached/*,*/ul/*,*.DS_STORE
 set wildignore+=*.swp,*~,._* " Disable temp and backup files
 set ruler
 set number            " Show line numbers
-set colorcolumn=80
+set colorcolumn=80,100
 set visualbell                  " Sssshh!
 set undofile        " Persistent Undo Hisotry
 set undodir=~/.vim/_undo
