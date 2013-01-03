@@ -107,6 +107,8 @@ au FileType html call StabHard(4)
 au FileType smarty call StabHard(4)
 au BufRead,BufNewFile *.scss set filetype=scss
 au FileType css,scss,html,haml setlocal isk+=- 
+au BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,} | normal zR
+au BufRead,BufNewFile *.sass setlocal foldmethod=indent | normal zR
 
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
@@ -350,7 +352,7 @@ nnoremap tk  :tabnext<CR>
 nnoremap tj  :tabprev<CR>
 nnoremap tl  :tablast<CR>
 nnoremap tt  :tabedit<Space>
-nnoremap tn  :tabnext<Space>
+"nnoremap tn  :tabnext<Space>
 nnoremap tm  :tabm<Space>
 nnoremap td  :tabclose<CR>
 
@@ -413,9 +415,19 @@ function! BeQuickOpen()
   endif
 endfunction
 
+function! CopyAndClose()
+  normal ggVG"+y
+  q!
+endfunction
+
+map <D-e> :call CopyAndClose()<CR>
+"" Evernote
+""
+autocmd BufRead *.{md-evernote} %s/\n\n/\r/gie | %s/\(.\)\n\(.\)/\1\r\r\2/gie | %s/\(\d\{1,}\. .*\)\n$/\1/gie | %s/\(\* .*\)\n$/\1/gie | %s/\(\* .*[\r\n]\)\(\*\)\@!/\1\r/gei | %s/\(\d\{1,}\. .*[\r\n]\)\(\d\{1,}\.\)\@!/\1\r/gei
+au BufRead,BufNewFile *.{md-evernote}   set filetype=mkd
+j
 " IndentConsistencyCopAutoCMD
 let g:indentconsistencycop_CheckOnLoad = 0
-
 " IndentGuides
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 0 " Dark Color Scheme
@@ -428,3 +440,16 @@ let g:EasyMotion_leader_key = '<Leader>'
 hi link EasyMotionTarget Identifier
 hi link EasyMotionShade  Comment
 
+" Evervim
+let g:evervim_devtoken='S=s33:U=3496a7:E=142edb92811:C=13b9607fc11:P=1cd:A=en-devtoken:H=24cbf9668ffb6d1d6db044cdc7df649d'
+
+
+" iTerm2 Bindings
+
+vmap <c-c> "+y
+imap <c-v> <esc>"+pi
+nmap <leader>a ggV
+nmap <leader>ay ggVG"+y
+nmap <leader>ad ggVG"+d
+nmap <C-s> <Esc>:w<CR>
+imap <C-s> <Esc>:w<CR>a

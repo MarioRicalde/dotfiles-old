@@ -4,7 +4,10 @@
 --type-set=erb=.erb
 --type-set=tpl=.tpl
 --type-set=str=.str
+
+--type-add=js=.coffee
 --type-set=coffee=.coffee
+
 --ignore-dir=parsed_src
 --ignore-dir=smarty
 --ignore-dir=Smarty
