@@ -90,34 +90,35 @@
 	url = git@github.com:kuroir/stab.vim.git
 [submodule ".vim/bundle/helpers/IndentConsistencyCop"]
 	path = .vim/bundle/helpers/IndentConsistencyCop
-	url = git://github.com/vim-scripts/IndentConsistencyCop.git
+	url = http://github.com/vim-scripts/IndentConsistencyCop.git
 [submodule ".vim/bundle/helpers/IndentConsistencyCopCmds"]
 	path = .vim/bundle/helpers/IndentConsistencyCopCmds
-	url = https://github.com/vim-scripts/IndentConsistencyCopAutoCmds
+	url = http://github.com/vim-scripts/IndentConsistencyCopAutoCmds
 [submodule ".vim/bundle/core/bufexplorer"]
 	path = .vim/bundle/core/bufexplorer
-	url = git@github.com:kuroir/bufexplorer.zip.git
+	url = http://github.com/kuroir/bufexplorer.zip 
 [submodule ".vim/bundle/text-helpers/SpeedDating"]
 	path = .vim/bundle/text-helpers/SpeedDating
-	url = git://github.com/tpope/vim-speeddating.git
+	url = http://github.com/tpope/vim-speeddating.git
 [submodule ".vim/bundle/core/IndexedSearch"]
 	path = .vim/bundle/core/IndexedSearch
-	url = git://github.com/skwp/vim-indexed-search.git
+	url = http://github.com/skwp/vim-indexed-search.git
 [submodule ".vim/bundle/theme/IndentGuide"]
 	path = .vim/bundle/theme/IndentGuide
-	url = git://github.com/nathanaelkane/vim-indent-guides.git
+	url = http://github.com/nathanaelkane/vim-indent-guides.git
 [submodule ".vim/bundle/syntax/jquery"]
 	path = .vim/bundle/syntax/jquery
-	url = git://github.com/itspriddle/vim-jquery.git
+	url = http://github.com/itspriddle/vim-jquery.git
 [submodule ".vim/bundle/text-helpers/ColorHighlight"]
 	path = .vim/bundle/text-helpers/ColorHighlight
-	url = git://github.com/chrisbra/color_highlight.git
+	url = http://github.com/chrisbra/color_highlight.git
 [submodule ".vim/bundle/core/Gitv"]
 	path = .vim/bundle/core/Gitv
-	url = git://github.com/gregsexton/gitv.git
+	url = http://github.com/gregsexton/gitv.git
 [submodule ".vim/bundle/helpers/NrrwRgn"]
 	path = .vim/bundle/helpers/NrrwRgn
-	url = git://github.com/chrisbra/NrrwRgn.git
+	url = http://github.com/chrisbra/NrrwRgn.git
 [submodule ".vim/bundle/helpers/NerdCommenter"]
 	path = .vim/bundle/helpers/NerdCommenter
-	url = git://github.com/scrooloose/nerdcommenter.git
+	url = http://github.com/scrooloose/nerdcommenter.git
+
