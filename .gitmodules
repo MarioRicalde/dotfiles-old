@@ -18,7 +18,7 @@
 	url = http://github.com/kien/ctrlp.vim.git
 [submodule ".vim/bundle/theme/poweriline"]
 	path = .vim/bundle/theme/poweriline
-	url = git@github.com:kuroir/vim-powerline.git
+	url = http://github.com/kuroir/vim-powerline.git
 [submodule ".vim/bundle/theme/solarized"]
 	path = .vim/bundle/theme/solarized
 	url = http://github.com/altercation/vim-colors-solarized.git
@@ -87,7 +87,7 @@
 	url = http://github.com/godlygeek/tabular.git
 [submodule ".vim/bundle/helpers/stab"]
 	path = .vim/bundle/helpers/stab
-	url = git@github.com:kuroir/stab.vim.git
+	url = http://github.com/kuroir/stab.vim.git
 [submodule ".vim/bundle/helpers/IndentConsistencyCop"]
 	path = .vim/bundle/helpers/IndentConsistencyCop
 	url = http://github.com/vim-scripts/IndentConsistencyCop.git
@@ -121,4 +121,5 @@
 [submodule ".vim/bundle/helpers/NerdCommenter"]
 	path = .vim/bundle/helpers/NerdCommenter
 	url = http://github.com/scrooloose/nerdcommenter.git
+
 
