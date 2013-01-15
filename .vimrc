@@ -25,6 +25,8 @@ let &winheight = &lines * 2 / 10 " Set the window minimum height
 set laststatus=2
 set timeoutlen=350 " Timout wait for <leader> keys
 set cursorline
+set cursorcolumn
+set lazyredraw
 set shell=/bin/zsh   " TODO Figure out a conditional for this.
 
 "" Wild settings
@@ -159,6 +161,9 @@ nnoremap <leader>o :set paste<CR>m`o<Esc>``:set nopaste<CR>
 
 " Switch Folds
 noremap <F1> za
+
+" Switch scrollbind
+noremap <F12> :set scrollbind!<CR>
 
 " use :w!! to write to a file using sudo if you forgot to 'sudo vim file'
 cmap w!! %!sudo tee > /dev/null %
@@ -453,3 +458,4 @@ nmap <leader>ay ggVG"+y
 nmap <leader>ad ggVG"+d
 nmap <C-s> <Esc>:w<CR>
 imap <C-s> <Esc>:w<CR>a
+

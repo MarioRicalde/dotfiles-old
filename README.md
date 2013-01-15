@@ -12,7 +12,7 @@
     ln -s ~/dotfiles/.vimrc ~/.vimrc
     ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
     ln -s ~/dotfiles/.gitignore ~/.gitignore
-    git config --global core.excludesfile
+    git config --global core.excludesfile ~/.gitignore
 
 # Updating Modules
 
