@@ -123,3 +123,6 @@
 	url = http://github.com/scrooloose/nerdcommenter.git
 
 
+[submodule ".vim/bundle/syntax/mustache"]
+	path = .vim/bundle/syntax/mustache
+	url = https://github.com/juvenn/mustache.vim.git
