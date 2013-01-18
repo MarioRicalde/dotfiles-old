@@ -129,3 +129,6 @@
 [submodule ".vim/bundle/text-helpers/Matchit"]
 	path = .vim/bundle/text-helpers/Matchit
 	url = https://github.com/kuroir/vim-matchit.git
+[submodule ".vim/bundle/text-helpers/AutoPairs"]
+	path = .vim/bundle/text-helpers/AutoPairs
+	url = https://github.com/jiangmiao/auto-pairs.git
