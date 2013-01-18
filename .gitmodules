@@ -126,3 +126,6 @@
 [submodule ".vim/bundle/syntax/mustache"]
 	path = .vim/bundle/syntax/mustache
 	url = https://github.com/juvenn/mustache.vim.git
+[submodule ".vim/bundle/text-helpers/Matchit"]
+	path = .vim/bundle/text-helpers/Matchit
+	url = https://github.com/kuroir/vim-matchit.git
