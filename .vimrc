@@ -108,6 +108,7 @@ au FileType php call StabHard(4)
 au FileType html call StabHard(4)
 au FileType smarty call StabHard(4)
 au BufRead,BufNewFile *.scss set filetype=scss
+au BufRead,BufNewFile *.phtml set filetype=html.php
 au FileType css,scss,html,haml setlocal isk+=- 
 au BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,} | normal zR
 au BufRead,BufNewFile *.sass setlocal foldmethod=indent | normal zR
@@ -146,6 +147,7 @@ endif
 ""
 
 "" Move lines (up, right, top, left)
+nnoremap K i<CR><ESC>
 nnoremap <C-l> :><CR>
 nnoremap <C-h> :<<CR>
 nnoremap <C-j> <Esc>:m .+1<cr>==
@@ -161,6 +163,7 @@ nnoremap <leader>o :set paste<CR>m`o<Esc>``:set nopaste<CR>
 
 " Switch Folds
 noremap <F1> za
+vnoremap <F1> zf
 
 " Switch scrollbind
 noremap <F12> :set scrollbind!<CR>

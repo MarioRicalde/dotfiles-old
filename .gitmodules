@@ -31,9 +31,6 @@
 [submodule ".vim/bundle/syntax/git"]
 	path = .vim/bundle/syntax/git
 	url = http://github.com/tpope/vim-git.git
-[submodule ".vim/bundle/syntax/nginx"]
-	path = .vim/bundle/syntax/nginx
-	url = http://github.com/andersjanmyr/nginx-vim-syntax.git
 [submodule ".vim/bundle/syntax/smarty"]
 	path = .vim/bundle/syntax/smarty
 	url = http://github.com/iakio/smarty3.vim.git
@@ -132,3 +129,6 @@
 [submodule ".vim/bundle/text-helpers/AutoPairs"]
 	path = .vim/bundle/text-helpers/AutoPairs
 	url = https://github.com/jiangmiao/auto-pairs.git
+[submodule ".vim/bundle/syntax/nginx"]
+	path = .vim/bundle/syntax/nginx
+	url = https://github.com/vim-scripts/nginx.vim.git
