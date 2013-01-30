@@ -132,3 +132,6 @@
 [submodule ".vim/bundle/syntax/nginx"]
 	path = .vim/bundle/syntax/nginx
 	url = https://github.com/vim-scripts/nginx.vim.git
+[submodule ".vim/bundle/helpers/Seek"]
+	path = .vim/bundle/helpers/Seek
+	url = https://github.com/goldfeld/vim-seek.git
