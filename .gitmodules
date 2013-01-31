@@ -135,3 +135,6 @@
 [submodule ".vim/bundle/helpers/Seek"]
 	path = .vim/bundle/helpers/Seek
 	url = https://github.com/goldfeld/vim-seek.git
+[submodule ".vim/bundle/helpers/xmledit"]
+	path = .vim/bundle/helpers/xmledit
+	url = https://github.com/kuroir/xmledit.git
