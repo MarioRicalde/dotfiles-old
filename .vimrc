@@ -111,6 +111,7 @@ au BufRead,BufNewFile *.scss set filetype=scss
 au BufRead,BufNewFile *.phtml set filetype=html.php
 au FileType css,scss,html,haml setlocal isk+=- 
 au BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,} | normal zR
+au BufRead,BufNewFile *.php,*.phmtl setlocal foldmethod=marker foldmarker={,} | normal zR
 au BufRead,BufNewFile *.sass setlocal foldmethod=indent | normal zR
 
 " Remember last location in file, but not for commit messages.
