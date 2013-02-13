@@ -138,3 +138,6 @@
 [submodule ".vim/bundle/helpers/xmledit"]
 	path = .vim/bundle/helpers/xmledit
 	url = https://github.com/kuroir/xmledit.git
+[submodule ".vim/bundle/helpers/rails"]
+	path = .vim/bundle/helpers/rails
+	url = https://github.com/tpope/vim-rails.git

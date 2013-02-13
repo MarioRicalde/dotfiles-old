@@ -101,6 +101,12 @@ command Dark !echo -e '\033]50;SetProfile=Dark\aColor Scheme Changed'
 ""
 "" FileTypes Preferences
 ""
+"" Intent & Manual Folding side to side.
+augroup vimrc
+  au BufReadPre * setlocal foldmethod=indent
+  au BufRead * normal zR  " Expand all folds by default.
+  au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
+augroup END
 au FileType make setlocal noexpandtab " In Makefiles, use real tabs, not tabs expanded to spaces
 au BufNewFile,BufRead *.json set ft=javascript "
 au FileType python call StabHard(4)
@@ -108,10 +114,9 @@ au FileType php call StabHard(4)
 au FileType html call StabHard(4)
 au FileType smarty call StabHard(4)
 au BufRead,BufNewFile *.scss set filetype=scss
-au BufRead,BufNewFile *.phtml set filetype=html.php
 au FileType css,scss,html,haml setlocal isk+=- 
+au BufRead,BufNewFile *.phtml set filetype=html.php
 au BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,} | normal zR
-au BufRead,BufNewFile *.php,*.phmtl setlocal foldmethod=marker foldmarker={,} | normal zR
 au BufRead,BufNewFile *.sass setlocal foldmethod=indent | normal zR
 
 " Remember last location in file, but not for commit messages.
