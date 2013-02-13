@@ -144,8 +144,10 @@ imap ;; <Esc> " Shortcut for Normal Mode
 
 "" Window Resizing
 if bufwinnr(1)
-  map + <C-W>+
-  map - <C-W>-
+  nmap + <C-W>+
+  nmap - <C-W>-
+  nmap ) :vertical res +1<cr> 
+  nmap ( :vertical res -1<cr> 
 endif
 
 ""
