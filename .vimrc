@@ -27,7 +27,6 @@ set timeoutlen=350 " Timout wait for <leader> keys
 set cursorline
 set cursorcolumn
 set lazyredraw
-set shell=/bin/zsh   " TODO Figure out a conditional for this.
 
 "" Wild settings
 ""
