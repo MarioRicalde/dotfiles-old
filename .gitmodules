@@ -141,3 +141,6 @@
 [submodule ".vim/bundle/helpers/rails"]
 	path = .vim/bundle/helpers/rails
 	url = https://github.com/tpope/vim-rails.git
+[submodule ".vim/bundle/core/qargs"]
+	path = .vim/bundle/core/qargs
+	url = https://github.com/kuroir/vim-qargs.git
