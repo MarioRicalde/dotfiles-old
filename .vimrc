@@ -23,11 +23,15 @@ set ttyfast  " Fast Terminal, sends more characters.
 set t_Co=256              " enable 256-color mode.
 let &winheight = &lines * 2 / 10 " Set the window minimum height
 set laststatus=2
-set timeoutlen=350 " Timout wait for <leader> keys
+set timeoutlen=800 " Timout wait for <leader> keys
 set cursorline
 set cursorcolumn
 set lazyredraw
 
+nnoremap ; :
+nnoremap : ;
+vnoremap ; :
+vnoremap : ;
 "" Wild settings
 ""
 set wildmode=full " command completion works with tab.
@@ -81,8 +85,8 @@ set smartcase   " ... unless they contain at least one capital letter
 set showmatch
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 " Remove the highlight
-map <Space> :noh<CR>
-map <TAB> :BufExplorer<CR>
+map <Space> ;noh<CR>
+map <TAB> ;BufExplorer<CR>
 ""
 "" Theme Settings
 ""
@@ -139,14 +143,13 @@ map <Left> <Nop>
 map <Right> <Nop>
 map <Up> <Nop>
 map <Down> <Nop>
-imap ;; <Esc> " Shortcut for Normal Mode
 
 "" Window Resizing
 if bufwinnr(1)
   nmap + <C-W>+
   nmap - <C-W>-
-  nmap ) :vertical res +1<cr> 
-  nmap ( :vertical res -1<cr> 
+  nmap ) ;vertical res +1<cr> 
+  nmap ( ;vertical res -1<cr> 
 endif
 
 ""
@@ -155,25 +158,25 @@ endif
 
 "" Move lines (up, right, top, left)
 nnoremap K i<CR><ESC>
-nnoremap <C-l> :><CR>
-nnoremap <C-h> :<<CR>
+nnoremap <C-l> ;><CR>
+nnoremap <C-h> ;<<CR>
 nnoremap <C-j> <Esc>:m .+1<cr>==
 nnoremap <C-k> <Esc>:m .-2<cr>==
-vnoremap <C-l> :><CR>gv
-vnoremap <C-h> :<<CR>gv
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
+vnoremap <C-l> ;><CR>gv
+vnoremap <C-h> ;<<CR>gv
+vnoremap <C-j> ;m '>+1<CR>gv=gv
+vnoremap <C-k> ;m '<-2<CR>gv=gv
 
 "" Add a line above or below current line
-nnoremap <leader>O :set paste<CR>m`O<Esc>``:set nopaste<CR>
-nnoremap <leader>o :set paste<CR>m`o<Esc>``:set nopaste<CR>
+nnoremap <leader>O ;set paste<CR>m`O<Esc>``:set nopaste<CR>
+nnoremap <leader>o ;set paste<CR>m`o<Esc>``:set nopaste<CR>
 
 " Switch Folds
 noremap <F1> za
 vnoremap <F1> zf
 
 " Switch scrollbind
-noremap <F12> :set scrollbind!<CR>
+noremap <F12> ;set scrollbind!<CR>
 
 " use :w!! to write to a file using sudo if you forgot to 'sudo vim file'
 cmap w!! %!sudo tee > /dev/null %
@@ -190,27 +193,27 @@ nmap <leader>U mQgewvU`Q
 nmap <leader>L mQgewvu`Q
 
 " cd to the directory containing the file in the buffer
-nmap <silent> <leader>cd :lcd %:h<CR>
+nmap <silent> <leader>cd ;lcd %:h<CR>
 
 " Create the directory containing the file in the buffer
-nmap <silent> <leader>md :!mkdir -p %:p:h<CR>
+nmap <silent> <leader>md ;!mkdir -p %:p:h<CR>
 
 " Some helpers to edit mode
 " http://vimcasts.org/e/14
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
-map <leader>ew :e %%
-map <leader>es :sp %%
-map <leader>ev :vsp %%
-map <leader>et :tabe %%
+map <leader>ew ;e %%
+map <leader>es ;sp %%
+map <leader>ev ;vsp %%
+map <leader>et ;tabe %%
 
 " Swap two words
-nmap <silent> gw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
+nmap <silent> gw ;s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
 
 " Underline the current line with '='
-nmap <silent> <leader>ul :t.\|s/./=/g\|:nohls<cr>
+nmap <silent> <leader>ul ;t.\|s/./=/g\|:nohls<cr>
 
 " set text wrapping toggles
-nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
+nmap <silent> <leader>tw ;set invwrap<CR>:set wrap?<CR>
 
 " find merge conflict markers
 nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
@@ -220,7 +223,7 @@ map <Down> gj
 map <Up> gk
 
 " Toggle hlsearch with <leader>hs
-nmap <leader>hs :set hlsearch! hlsearch?<CR>
+nmap <leader>hs ;set hlsearch! hlsearch?<CR>
 
 " Adjust viewports to the same size
 map <Leader>= <C-w>=
@@ -323,8 +326,8 @@ endif
 cmap <C-P> <C-R>=expand("%:p:h") . "/"<CR>
 
 "" Buffer Controls
-noremap <C-left> :bprev<CR>
-noremap <C-right> :bnext<CR>
+noremap <C-left> ;bprev<CR>
+noremap <C-right> ;bnext<CR>
 
 "" Some system wide fixes.
 imap <C-d> <Del>
@@ -332,26 +335,26 @@ imap <C-a> _
 imap <C-e> $
 
 "" Git
-map <leader>g :Git
-map <leader>gs :Gstatus<CR>
-map <leader>gf :Git fetch<CR>
-nmap <leader>gd :Gdiff<CR>
-nmap <leader>gl :Glog<CR>
-nmap <leader>gc :Gcommit<CR>
-map <leader>gf :Git fetch<CR>
-map <leader>gpl :Git pull
-map <leader>gplom :Git pull origin master<CR>
-map <leader>gp :Git push
-map <leader>gaa :Git add all<CR>
-map <leader>gau :Git update-index --assume-unchanged
-map <leader>gch :Git checkout
+map <leader>g ;Git
+map <leader>gs ;Gstatus<CR>
+map <leader>gf ;Git fetch<CR>
+nmap <leader>gd ;Gdiff<CR>
+nmap <leader>gl ;Glog<CR>
+nmap <leader>gc ;Gcommit<CR>
+map <leader>gf ;Git fetch<CR>
+map <leader>gpl ;Git pull
+map <leader>gplom ;Git pull origin master<CR>
+map <leader>gp ;Git push
+map <leader>gaa ;Git add all<CR>
+map <leader>gau ;Git update-index --assume-unchanged
+map <leader>gch ;Git checkout
 
 "" Tabularize
 if exists(":Tabularize")
-  nmap <Leader>a= :Tabularize /=<CR>
-  vmap <Leader>a= :Tabularize /=<CR>
-  nmap <Leader>a: :Tabularize /:\zs<CR>
-  vmap <Leader>a: :Tabularize /:\zs<CR>
+  nmap <Leader>a= ;Tabularize /=<CR>
+  vmap <Leader>a= ;Tabularize /=<CR>
+  nmap <Leader>a: ;Tabularize /:\zs<CR>
+  vmap <Leader>a: ;Tabularize /:\zs<CR>
 endif
 
 ""
@@ -362,18 +365,18 @@ set directory=~/.vim/_temp/      " where to put swap files.
 
 
 "" Tabs
-nnoremap th  :tabfirst<CR>
-nnoremap tk  :tabnext<CR>
-nnoremap tj  :tabprev<CR>
-nnoremap tl  :tablast<CR>
-nnoremap tt  :tabedit<Space>
-"nnoremap tn  :tabnext<Space>
-nnoremap tm  :tabm<Space>
-nnoremap td  :tabclose<CR>
+nnoremap th  ;tabfirst<CR>
+nnoremap tk  ;tabnext<CR>
+nnoremap tj  ;tabprev<CR>
+nnoremap tl  ;tablast<CR>
+nnoremap tt  ;tabedit<Space>
+"nnoremap tn  ;tabnext<Space>
+nnoremap tm  ;tabm<Space>
+nnoremap td  ;tabclose<CR>
 
 "" Aliases for Copy pasting between terminal and mac.
-vmap <leader>c :w !pbcopy<CR><CR>
-vmap <F2> :w !pbcopy<CR><CR>
+vmap <leader>c ;w !pbcopy<CR><CR>
+vmap <F2> ;w !pbcopy<CR><CR>
 vmap <leader>p <Esc>:set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
 
 "" Auto Tabularize Tables when using space
@@ -404,9 +407,9 @@ function! Preserve(command)
 endfunction
 
 "" Remove Trailing Whitespace
-nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
-nmap _= :call Preserve("normal gg=G")<CR>
-autocmd BufWritePre *.txt,*.py,*.js,*.coffee,*.txt,*.rb,*.css,*.scss,*.html,*.erb,*.haml,*.yaml :call Preserve("%s/\\s\\+$//e")
+nmap _$ ;call Preserve("%s/\\s\\+$//e")<CR>
+nmap _= ;call Preserve("normal gg=G")<CR>
+autocmd BufWritePre *.txt,*.py,*.js,*.coffee,*.txt,*.rb,*.css,*.scss,*.html,*.erb,*.haml,*.yaml ;call Preserve("%s/\\s\\+$//e")
 
 "" CtrlP
 ""
@@ -417,16 +420,16 @@ let g:ctrlp_working_path_mode = 'ra'
 
 
 " Nerd Toggle Hotkeys
-map <leader>s :NERDTreeToggle<cr>
-map <C-S> :NERDTreeToggle<cr>
-map <leader>sf :NERDTreeFind<cr>
-map <leader>re :so %<cr>
+map <leader>s ;NERDTreeToggle<cr>
+map <C-S> ;NERDTreeToggle<cr>
+map <leader>sf ;NERDTreeFind<cr>
+map <leader>re ;so %<cr>
 
 " Tagbar
-map <leader>S :TagbarToggle<cr>
+map <leader>S ;TagbarToggle<cr>
 
 
-map <CR> :call BeQuickOpen()<CR>
+map <CR> ;call BeQuickOpen()<CR>
 function! BeQuickOpen()
   echo bufname("%")
   if bufname("%")
@@ -439,7 +442,7 @@ function! CopyAndClose()
   q!
 endfunction
 
-map <D-e> :call CopyAndClose()<CR>
+map <D-e> ;call CopyAndClose()<CR>
 "" Evernote
 ""
 autocmd BufRead *.{md-evernote} %s/\n\n/\r/gie | %s/\(.\)\n\(.\)/\1\r\r\2/gie | %s/\(\d\{1,}\. .*\)\n$/\1/gie | %s/\(\* .*\)\n$/\1/gie | %s/\(\* .*[\r\n]\)\(\*\)\@!/\1\r/gei | %s/\(\d\{1,}\. .*[\r\n]\)\(\d\{1,}\.\)\@!/\1\r/gei
@@ -525,8 +528,8 @@ function! NumberToggle()
   endif
 endfunc
 
-nmap <leader>l :call NumberToggle()<CR>
-nmap <leader>p :set paste!<CR>
+nmap <leader>l ;call NumberToggle()<CR>
+nmap <leader>p ;set paste!<CR>
 " Movement on Wrapped lines.
 nmap j gj
 nmap k gk
@@ -543,7 +546,3 @@ cnoremap <Esc>f <S-Right>
 cnoremap <Esc>d <S-right><Delete>
 cnoremap <C-g>  <C-c>
 
-nnoremap ; :
-nnoremap : ;
-vnoremap ; :
-vnoremap : ;
