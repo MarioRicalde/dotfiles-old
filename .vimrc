@@ -90,7 +90,7 @@ colorscheme solarized
 set background=dark
 let g:Powerline_symbols='fancy'
 let g:Powerline_colorscheme='solarizedDark'
-let mapleader = ","  " <leader> keys
+let mapleader = "\\"  " <leader> keys
 hi IndentGuidesOdd ctermbg=0
 hi IndentGuidesEven ctermbg=8
 "hi IndentGuidesEven ctermbg=lightgrey " Light Color Scheme
@@ -511,3 +511,30 @@ function! QuickfixFilenames()
   return join(values(buffer_numbers))
 endfunction
 
+
+" Additions from http://statico.github.com/vim.html
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
+
+nmap <leader>l :call NumberToggle()<CR>
+nmap <leader>p :set paste!<CR>
+" Movement on Wrapped lines.
+nmap j gj
+nmap k gk
+" Some Emacs imrpovements
+cnoremap <C-a>  <Home>
+cnoremap <C-b>  <Left>
+cnoremap <C-f>  <Right>
+cnoremap <C-d>  <Delete>
+cnoremap <M-b>  <S-Left>
+cnoremap <M-f>  <S-Right>
+cnoremap <M-d>  <S-right><Delete>
+cnoremap <Esc>b <S-Left>
+cnoremap <Esc>f <S-Right>
+cnoremap <Esc>d <S-right><Delete>
+cnoremap <C-g>  <C-c>
