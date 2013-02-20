@@ -422,6 +422,10 @@ map <C-S> :NERDTreeToggle<cr>
 map <leader>sf :NERDTreeFind<cr>
 map <leader>re :so %<cr>
 
+" Tagbar
+map <leader>S :TagbarToggle<cr>
+
+
 map <CR> :call BeQuickOpen()<CR>
 function! BeQuickOpen()
   echo bufname("%")
@@ -538,3 +542,8 @@ cnoremap <Esc>b <S-Left>
 cnoremap <Esc>f <S-Right>
 cnoremap <Esc>d <S-right><Delete>
 cnoremap <C-g>  <C-c>
+
+nnoremap ; :
+nnoremap : ;
+vnoremap ; :
+vnoremap : ;

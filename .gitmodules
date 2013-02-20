@@ -144,3 +144,6 @@
 [submodule ".vim/bundle/core/qargs"]
 	path = .vim/bundle/core/qargs
 	url = https://github.com/kuroir/vim-qargs.git
+[submodule ".vim/bundle/core/tagbar"]
+	path = .vim/bundle/core/tagbar
+	url = https://github.com/majutsushi/tagbar.git
