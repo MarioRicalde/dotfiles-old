@@ -158,18 +158,18 @@ endif
 
 "" Move lines (up, right, top, left)
 nnoremap K i<CR><ESC>
-nnoremap <C-l> ;><CR>
-nnoremap <C-h> ;<<CR>
+nnoremap <C-l> :><CR>
+nnoremap <C-h> :<<CR>
 nnoremap <C-j> <Esc>:m .+1<cr>==
 nnoremap <C-k> <Esc>:m .-2<cr>==
-vnoremap <C-l> ;><CR>gv
-vnoremap <C-h> ;<<CR>gv
-vnoremap <C-j> ;m '>+1<CR>gv=gv
-vnoremap <C-k> ;m '<-2<CR>gv=gv
+vnoremap <C-l> :><CR>gv
+vnoremap <C-h> :<<CR>gv
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
 
 "" Add a line above or below current line
-nnoremap <leader>O ;set paste<CR>m`O<Esc>``:set nopaste<CR>
-nnoremap <leader>o ;set paste<CR>m`o<Esc>``:set nopaste<CR>
+nnoremap <leader>O :set paste<CR>m`O<Esc>``:set nopaste<CR>
+nnoremap <leader>o :set paste<CR>m`o<Esc>``:set nopaste<CR>
 
 " Switch Folds
 noremap <F1> za
@@ -201,10 +201,10 @@ nmap <silent> <leader>md ;!mkdir -p %:p:h<CR>
 " Some helpers to edit mode
 " http://vimcasts.org/e/14
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
-map <leader>ew ;e %%
-map <leader>es ;sp %%
-map <leader>ev ;vsp %%
-map <leader>et ;tabe %%
+map <leader>ew :e %%
+map <leader>es :sp %%
+map <leader>ev :vsp %%
+map <leader>et :tabe %%
 
 " Swap two words
 nmap <silent> gw ;s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
@@ -213,7 +213,7 @@ nmap <silent> gw ;s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
 nmap <silent> <leader>ul ;t.\|s/./=/g\|:nohls<cr>
 
 " set text wrapping toggles
-nmap <silent> <leader>tw ;set invwrap<CR>:set wrap?<CR>
+nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
 
 " find merge conflict markers
 nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
@@ -377,7 +377,7 @@ nnoremap td  ;tabclose<CR>
 "" Aliases for Copy pasting between terminal and mac.
 vmap <leader>c ;w !pbcopy<CR><CR>
 vmap <F2> ;w !pbcopy<CR><CR>
-vmap <leader>p <Esc>:set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
+vmap <leader>p <Esc>;set paste<CR>;r !pbpaste<CR>;set nopaste<CR>
 
 "" Auto Tabularize Tables when using space
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
@@ -420,34 +420,22 @@ let g:ctrlp_working_path_mode = 'ra'
 
 
 " Nerd Toggle Hotkeys
-map <leader>s ;NERDTreeToggle<cr>
-map <C-S> ;NERDTreeToggle<cr>
-map <leader>sf ;NERDTreeFind<cr>
-map <leader>re ;so %<cr>
+nmap <leader>s ;NERDTreeToggle<cr>
+nmap <C-S> ;NERDTreeToggle<cr>
+nmap <leader>sf ;NERDTreeFind<cr>
+nmap <leader>re ;so %<cr>
 
 " Tagbar
-map <leader>S ;TagbarToggle<cr>
+nmap <leader>S ;TagbarToggle<cr>
 
-
-map <CR> ;call BeQuickOpen()<CR>
-function! BeQuickOpen()
-  echo bufname("%")
-  if bufname("%")
-    echo "Hello BufferExplorer"
-  endif
-endfunction
-
+" Copy and Close
 function! CopyAndClose()
   normal ggVG"+y
   q!
 endfunction
 
-map <D-e> ;call CopyAndClose()<CR>
-"" Evernote
-""
-autocmd BufRead *.{md-evernote} %s/\n\n/\r/gie | %s/\(.\)\n\(.\)/\1\r\r\2/gie | %s/\(\d\{1,}\. .*\)\n$/\1/gie | %s/\(\* .*\)\n$/\1/gie | %s/\(\* .*[\r\n]\)\(\*\)\@!/\1\r/gei | %s/\(\d\{1,}\. .*[\r\n]\)\(\d\{1,}\.\)\@!/\1\r/gei
-au BufRead,BufNewFile *.{md-evernote}   set filetype=mkd
-j
+nmap <leader>cac ;call CopyAndClose()<CR>
+
 " IndentConsistencyCopAutoCMD
 let g:indentconsistencycop_CheckOnLoad = 0
 " IndentGuides
@@ -473,8 +461,8 @@ imap <c-v> <esc>"+pi
 nmap <leader>a ggV
 nmap <leader>ay ggVG"+y
 nmap <leader>ad ggVG"+d
-nmap <C-s> <Esc>:w<CR>
-imap <C-s> <Esc>:w<CR>a
+nmap <C-s> <Esc>;w<CR>
+imap <C-s> <Esc>;w<CR>a
 
 " Return indent (all whitespace at start of a line), converted from
 " tabs to spaces if what = 1, or from spaces to tabs otherwise.
