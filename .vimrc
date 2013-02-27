@@ -1,57 +1,55 @@
 "" Pathogen
-""
 runtime bundle/core/pathogen/autoload/pathogen.vim
-
 for path in ["core","text-helpers", "helpers", "syntax", "theme", "experiment"]
   call pathogen#infect("~/.vim/bundle/" . path)
 endfor
 
 "" Globals
-""
 let $vimrc="~/.vimrc"
-set nocompatible      " Use vim, no vi defaults
+set nocompatible                  " Use vim, no vi defaults
 syntax enable
-filetype plugin indent on " filetype detection[ON] plugin[ON] indent[ON]
-set hidden   " Allow Buffers to be hidden without save.
-set history=10000 " Command History
-set t_ti= t_te= " Prevent Vim from clobbering the scrollback buffer.
-set mouse=a                     "Support for mouse
-set synmaxcol=2048 " Syntax coloring lines that are too long just slows down the world
-set switchbuf=useopen          " How New Buffers Open [split, newtab, useopen]
-set encoding=utf-8    " Set default encoding to UTF-8
-set ttyfast  " Fast Terminal, sends more characters.
-set t_Co=256              " enable 256-color mode.
-let &winheight = &lines * 2 / 10 " Set the window minimum height
-set laststatus=2
-set timeoutlen=800 " Timout wait for <leader> keys
+filetype plugin indent on         " filetype detection[ON] plugin[ON] indent[ON]
+set hidden                        " Allow Buffers to be hidden without save.
+set history=10000                 " Command History
+set t_ti= t_te=                   " Prevent Vim from clobbering the scrollback buffer.
+set mouse=a                       " Support for mouse
+set synmaxcol=2048                " Syntax coloring lines that are too long just slows down the world
+set switchbuf=useopen             " How New Buffers Open [split, newtab, useopen]
+set encoding=utf-8                " Set default encoding to UTF-8
+set ttyfast                       " Fast Terminal, sends more characters.
+set t_Co=256                      " enable 256-color mode.
+let &winheight = &lines * 2 / 10  " Set the window minimum height
+set laststatus=2                  " The first line is used by vim Powerline
+set timeoutlen=800                " Timout wait for <leader> keys
 set cursorline
 set cursorcolumn
+set colorcolumn=80,100            " 80 being the "Alright, watch out" and 100 the "STAHP!".
 set lazyredraw
+set ruler
+set number                        " Show line numbers
+set visualbell                    " Sssshh!
+set undofile                      " Persistent Undo Hisotry
+set undodir=~/.vim/_undo
 
+" Change ; into :
+" Using : for everything in Vim will end up hurting your hands on the long
+" run. So why not just use a single-key combo? This swaps : with ; and vicev.
 nnoremap ; :
 nnoremap : ;
 vnoremap ; :
 vnoremap : ;
-"" Wild settings
-""
-set wildmode=full " command completion works with tab.
-set wildmenu      " make tab completion for files/buffers act like bash
-set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem " Disable output and VCS files
-set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.dmg " Disable archive files
-set wildignore+=*.pdf,*.ai,*.psd,*.doc,*.gdoc,*.jpeg,*.jpg,*.jpeg,*.png,*.gif " Disable archive files
-set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/* " Ignore bundler and sass cache
-set wildignore+=*/.AppleDouble*,*/templates_cached/*,*/ul/*,*.DS_STORE
-set wildignore+=*.swp,*~,._* " Disable temp and backup files
-set ruler
-set number            " Show line numbers
-set colorcolumn=80,100
-set visualbell                  " Sssshh!
-set undofile        " Persistent Undo Hisotry
-set undodir=~/.vim/_undo
 
-""
+"" Wildmenu settings
+set wildmode=full                                                              " command completion works with tab.
+set wildmenu                                                                   " make tab completion for files/buffers act like bash
+set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem            " Disable output and VCS files
+set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.dmg                  " Disable archive files
+set wildignore+=*.pdf,*.ai,*.psd,*.doc,*.gdoc,*.jpeg,*.jpg,*.jpeg,*.png,*.gif  " Disable archive files
+set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*   " Ignore bundler and sass cache
+set wildignore+=*.swp,*~,._*,*/.AppleDouble*,*.DS_STORE                        " Disable temp and backup files
+set wildignore+=*/templates_cached/*,*/ul/*                                    " Custom
+
 "" Whitespace
-""
 set wrap                        " wrap long lines, vim hates long lines.
 set linebreak
 set nolist
@@ -65,31 +63,28 @@ set backspace=indent,eol,start  " backspace through everything in insert mode
 set autoindent                  " automatically indent
 set scrolloff=3                 " don't show search results as the first line
 
-" List chars
+" Show Invisible Characters
 set list                          " Show invisible characters
 set listchars=""                  " Reset the listchars
-set listchars=tab:\ \             " a tab should display as "  ", trailing whitespace as "."
-set listchars+=trail:¬            " show trailing spaces as dots
+set lcs=tab:˒\ ,eol:˓,nbsp:%
+set listchars+=trail:˒            " show trailing spaces as dots
 set listchars+=extends:>          " The character to show in the last column when wrap is
                                   " off and the line continues beyond the right of the screen
 set listchars+=precedes:<         " The character to show in the last column when wrap is
                                   " off and the line continues beyond the right of the screen
 
-""
 "" Searching
-""
-set hlsearch    " highlight matches
-set incsearch   " incremental searching
-set ignorecase  " searches are case insensitive...
-set smartcase   " ... unless they contain at least one capital letter
+set hlsearch                                         " highlight matches
+set incsearch                                        " incremental searching
+set ignorecase                                       " searches are case insensitive...
+set smartcase                                        " ... unless they contain at least one capital letter
 set showmatch
+" Quick 'Replace' shortcut.
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
-" Remove the highlight
+" Cleanup previous Highlights
 map <Space> ;noh<CR>
-map <TAB> ;BufExplorer<CR>
-""
+
 "" Theme Settings
-""
 colorscheme solarized
 set background=dark
 let g:Powerline_symbols='fancy'
@@ -97,13 +92,17 @@ let g:Powerline_colorscheme='solarizedDark'
 let mapleader = "\\"  " <leader> keys
 hi IndentGuidesOdd ctermbg=0
 hi IndentGuidesEven ctermbg=8
-"hi IndentGuidesEven ctermbg=lightgrey " Light Color Scheme
+" Quickly switch between color schemes.
+" You need to config your iTerm2 to use "Dark" and "Light" Color Scheme.
+command Dark set background=dark | !echo -e '\033]50;SetProfile=Dark\aColor Scheme Changed'
+command Light set background=light | !echo -e '\033]50;SetProfile=Light\aColor Scheme Changed'
 
-command Light !echo -e '\033]50;SetProfile=Light\aColor Scheme Changed'
-command Dark !echo -e '\033]50;SetProfile=Dark\aColor Scheme Changed'
-""
+"  TODO DOCUMENT FROM HERE
+"  TODO DOCUMENT FROM HERE
+"  TODO DOCUMENT FROM HERE
+"  TODO DOCUMENT FROM HERE
+
 "" FileTypes Preferences
-""
 "" Intent & Manual Folding side to side.
 augroup vimrc
   au BufReadPre * setlocal foldmethod=indent
@@ -116,8 +115,9 @@ au FileType python call StabHard(4)
 au FileType php call StabHard(4)
 au FileType html call StabHard(4)
 au FileType smarty call StabHard(4)
+au FileType html let g:syntastic_quiet_warnings=1
 au BufRead,BufNewFile *.scss set filetype=scss
-au FileType css,scss,html,haml setlocal isk+=- 
+au FileType css,scss,html,haml setlocal isk+=-
 au BufRead,BufNewFile *.phtml set filetype=html.php
 au BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,} | normal zR
 au BufRead,BufNewFile *.sass setlocal foldmethod=indent | normal zR
@@ -136,6 +136,7 @@ if has("gui_running")
   set guifont=PragmataPro
   set linespace=2
   autocmd VimResized * wincmd = " Automatically resize splits when resizing MacVim window
+  set lcs+=tab:'\ ,eol:´
 endif
 
 "" Arrows are not acceptable on Normal mode.
@@ -148,8 +149,8 @@ map <Down> <Nop>
 if bufwinnr(1)
   nmap + <C-W>+
   nmap - <C-W>-
-  nmap ) ;vertical res +1<cr> 
-  nmap ( ;vertical res -1<cr> 
+  nmap ) ;vertical res +1<cr>
+  nmap ( ;vertical res -1<cr>
 endif
 
 ""
@@ -424,6 +425,7 @@ nmap <leader>s ;NERDTreeToggle<cr>
 nmap <C-S> ;NERDTreeToggle<cr>
 nmap <leader>sf ;NERDTreeFind<cr>
 nmap <leader>re ;so %<cr>
+map <TAB> ;BufExplorer<CR>
 
 " Tagbar
 nmap <leader>S ;TagbarToggle<cr>
