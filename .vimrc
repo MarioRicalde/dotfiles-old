@@ -430,6 +430,9 @@ map <TAB> ;BufExplorer<CR>
 " Tagbar
 nmap <leader>S ;TagbarToggle<cr>
 
+" Zencoding
+let g:user_zen_leader_key = '<leader>'
+
 " Copy and Close
 function! CopyAndClose()
   normal ggVG"+y
