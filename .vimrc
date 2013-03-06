@@ -1,6 +1,6 @@
 "" Pathogen
 runtime bundle/core/pathogen/autoload/pathogen.vim
-for path in ["core","text-helpers", "helpers", "syntax", "theme", "experiment"]
+for path in ["core","helpers", "text-helpers", "syntax", "theme", "experiment"]
   call pathogen#infect("~/.vim/bundle/" . path)
 endfor
 
@@ -101,6 +101,12 @@ command Light set background=light | !echo -e '\033]50;SetProfile=Light\aColor S
 "  TODO DOCUMENT FROM HERE
 "  TODO DOCUMENT FROM HERE
 "  TODO DOCUMENT FROM HERE
+let g:UltiSnipsDontReverseSearchPath="1"
+
+" Allow the . to execute once for each line of a visual selection
+vnoremap . ;normal .<CR>"
+" Jump to last non-space character in line ( opposite of ^ )
+map & g_
 
 "" FileTypes Preferences
 "" Intent & Manual Folding side to side.
@@ -136,7 +142,7 @@ if has("gui_running")
   set guifont=PragmataPro
   set linespace=2
   autocmd VimResized * wincmd = " Automatically resize splits when resizing MacVim window
-  set lcs+=tab:'\ ,eol:´
+  set lcs+=tab:˙\ ,eol:´
 endif
 
 "" Arrows are not acceptable on Normal mode.
@@ -381,7 +387,7 @@ vmap <F2> ;w !pbcopy<CR><CR>
 vmap <leader>p <Esc>;set paste<CR>;r !pbpaste<CR>;set nopaste<CR>
 
 "" Auto Tabularize Tables when using space
-inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+inoremap <silent> <Bar>   <Bar><Esc>;call <SID>align()<CR>a
 function! s:align()
   let p = '^\s*|\s.*\s|\s*$'
   if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
@@ -393,24 +399,18 @@ function! s:align()
   endif
 endfunction
 
-"" Preserve Function
-"" Execute a command and preserve state (http://technotales.wordpress.com/2010/03/31/preserve-a-vim-function-that-keeps-your-state/)
+" Wrapper function to restore the cursor position, window position,
+" and last search after running a command. ( https://docwhat.org/vim-preserve-your-cursor-and-window-state/ )
 function! Preserve(command)
-  " Preparation: save last search, and cursor position.
-  let _s=@/
-  let l = line(".")
-  let c = col(".")
-  " Do the business:
+  let save_cursor = getpos(".")
   execute a:command
-  " Clean up: restore previous search history, and cursor position
-  let @/=_s
-  call cursor(l, c)
+  call setpos('.', save_cursor)
 endfunction
 
 "" Remove Trailing Whitespace
 nmap _$ ;call Preserve("%s/\\s\\+$//e")<CR>
 nmap _= ;call Preserve("normal gg=G")<CR>
-autocmd BufWritePre *.txt,*.py,*.js,*.coffee,*.txt,*.rb,*.css,*.scss,*.html,*.erb,*.haml,*.yaml ;call Preserve("%s/\\s\\+$//e")
+autocmd BufWritePre *.txt,*.py,*.js,*.coffee,*.txt,*.rb,*.css,*.scss,*.html,*.erb,*.haml,*.yaml :call Preserve("%s/\\s\\+$//e")
 
 "" CtrlP
 ""
