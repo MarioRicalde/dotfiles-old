@@ -22,7 +22,6 @@ let &winheight = &lines * 2 / 10  " Set the window minimum height
 set laststatus=2                  " The first line is used by vim Powerline
 set timeoutlen=800                " Timout wait for <leader> keys
 set cursorline
-set cursorcolumn
 set colorcolumn=80,100            " 80 being the "Alright, watch out" and 100 the "STAHP!".
 set lazyredraw
 set ruler
@@ -104,7 +103,7 @@ command Light set background=light | !echo -e '\033]50;SetProfile=Light\aColor S
 let g:UltiSnipsDontReverseSearchPath="1"
 
 " Allow the . to execute once for each line of a visual selection
-vnoremap . ;normal .<CR>"
+vnoremap . :normal .<CR>
 " Jump to last non-space character in line ( opposite of ^ )
 map & g_
 
@@ -124,7 +123,7 @@ au FileType smarty call StabHard(4)
 au FileType html let g:syntastic_quiet_warnings=1
 au BufRead,BufNewFile *.scss set filetype=scss
 au FileType css,scss,html,haml setlocal isk+=-
-au BufRead,BufNewFile *.phtml set filetype=html.php
+au BufRead,BufNewFile *.phtml set filetype=phtml
 au BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,} | normal zR
 au BufRead,BufNewFile *.sass setlocal foldmethod=indent | normal zR
 
@@ -539,3 +538,4 @@ cnoremap <Esc>f <S-Right>
 cnoremap <Esc>d <S-right><Delete>
 cnoremap <C-g>  <C-c>
 
+source .vimrc_custom
