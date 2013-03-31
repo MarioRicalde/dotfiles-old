@@ -538,4 +538,4 @@ cnoremap <Esc>f <S-Right>
 cnoremap <Esc>d <S-right><Delete>
 cnoremap <C-g>  <C-c>
 
-source .vimrc_custom
+source ~/.vimrc_custom
