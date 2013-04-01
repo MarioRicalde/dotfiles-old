@@ -386,7 +386,8 @@ vmap <F2> ;w !pbcopy<CR><CR>
 vmap <leader>p <Esc>;set paste<CR>;r !pbpaste<CR>;set nopaste<CR>
 
 "" Auto Tabularize Tables when using space
-inoremap <silent> <Bar>   <Bar><Esc>;call <SID>align()<CR>a
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+ 
 function! s:align()
   let p = '^\s*|\s.*\s|\s*$'
   if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
@@ -397,6 +398,7 @@ function! s:align()
     call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
   endif
 endfunction
+
 
 " Wrapper function to restore the cursor position, window position,
 " and last search after running a command. ( https://docwhat.org/vim-preserve-your-cursor-and-window-state/ )
