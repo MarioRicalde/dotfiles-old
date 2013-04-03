@@ -74,7 +74,7 @@ set showmatch
 " Quick 'Replace' shortcut.
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 " Cleanup previous Highlights
-map <Space> ;noh<CR>
+map <Space> :noh<CR>
 
 "" Theme Settings
 colorscheme solarized
@@ -147,8 +147,8 @@ map <Down> <Nop>
 if bufwinnr(1)
   nmap + <C-W>+
   nmap - <C-W>-
-  nmap ) ;vertical res +1<cr>
-  nmap ( ;vertical res -1<cr>
+  nmap ) :vertical res +1<cr>
+  nmap ( :vertical res -1<cr>
 endif
 
 ""
@@ -175,7 +175,7 @@ noremap <F1> za
 vnoremap <F1> zf
 
 " Switch scrollbind
-noremap <F12> ;set scrollbind!<CR>
+noremap <F12> :set scrollbind!<CR>
 
 " use :w!! to write to a file using sudo if you forgot to 'sudo vim file'
 cmap w!! %!sudo tee > /dev/null %
@@ -192,10 +192,10 @@ nmap <leader>U mQgewvU`Q
 nmap <leader>L mQgewvu`Q
 
 " cd to the directory containing the file in the buffer
-nmap <silent> <leader>cd ;lcd %:h<CR>
+nmap <silent> <leader>cd :lcd %:h<CR>
 
 " Create the directory containing the file in the buffer
-nmap <silent> <leader>md ;!mkdir -p %:p:h<CR>
+nmap <silent> <leader>md :!mkdir -p %:p:h<CR>
 
 " Some helpers to edit mode
 " http://vimcasts.org/e/14
@@ -206,10 +206,10 @@ map <leader>ev :vsp %%
 map <leader>et :tabe %%
 
 " Swap two words
-nmap <silent> gw ;s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
+nmap <silent> gw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
 
 " Underline the current line with '='
-nmap <silent> <leader>ul ;t.\|s/./=/g\|:nohls<cr>
+nmap <silent> <leader>ul :t.\|s/./=/g\|:nohls<cr>
 
 " set text wrapping toggles
 nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
@@ -222,7 +222,7 @@ map <Down> gj
 map <Up> gk
 
 " Toggle hlsearch with <leader>hs
-nmap <leader>hs ;set hlsearch! hlsearch?<CR>
+nmap <leader>hs :set hlsearch! hlsearch?<CR>
 
 " Adjust viewports to the same size
 map <Leader>= <C-w>=
@@ -325,8 +325,8 @@ endif
 cmap <C-P> <C-R>=expand("%:p:h") . "/"<CR>
 
 "" Buffer Controls
-noremap <C-left> ;bprev<CR>
-noremap <C-right> ;bnext<CR>
+noremap <C-left> :bprev<CR>
+noremap <C-right> :bnext<CR>
 
 "" Some system wide fixes.
 
@@ -336,26 +336,26 @@ imap <C-e> <Esc>$a
 imap jj <Esc>
 
 "" Git
-map <leader>g ;Git
-map <leader>gs ;Gstatus<CR>
-map <leader>gf ;Git fetch<CR>
-nmap <leader>gd ;Gdiff<CR>
-nmap <leader>gl ;Glog<CR>
-nmap <leader>gc ;Gcommit<CR>
-map <leader>gf ;Git fetch<CR>
-map <leader>gpl ;Git pull
-map <leader>gplom ;Git pull origin master<CR>
-map <leader>gp ;Git push
-map <leader>gaa ;Git add all<CR>
-map <leader>gau ;Git update-index --assume-unchanged
-map <leader>gch ;Git checkout
+map <leader>g :Git
+map <leader>gs :Gstatus<CR>
+map <leader>gf :Git fetch<CR>
+nmap <leader>gd :Gdiff<CR>
+nmap <leader>gl :Glog<CR>
+nmap <leader>gc :Gcommit<CR>
+map <leader>gf :Git fetch<CR>
+map <leader>gpl :Git pull
+map <leader>gplom :Git pull origin master<CR>
+map <leader>gp :Git push
+map <leader>gaa :Git add all<CR>
+map <leader>gau :Git update-index --assume-unchanged
+map <leader>gch :Git checkout
 
 "" Tabularize
 if exists(":Tabularize")
-  nmap <Leader>a= ;Tabularize /=<CR>
-  vmap <Leader>a= ;Tabularize /=<CR>
-  nmap <Leader>a: ;Tabularize /:\zs<CR>
-  vmap <Leader>a: ;Tabularize /:\zs<CR>
+  nmap <Leader>a= :Tabularize /=<CR>
+  vmap <Leader>a= :Tabularize /=<CR>
+  nmap <Leader>a: :Tabularize /:\zs<CR>
+  vmap <Leader>a: :Tabularize /:\zs<CR>
 endif
 
 ""
@@ -366,18 +366,18 @@ set directory=~/.vim/_temp/      " where to put swap files.
 
 
 "" Tabs
-nnoremap th  ;tabfirst<CR>
-nnoremap tk  ;tabnext<CR>
-nnoremap tj  ;tabprev<CR>
-nnoremap tl  ;tablast<CR>
-nnoremap tt  ;tabedit<Space>
-"nnoremap tn  ;tabnext<Space>
-nnoremap tm  ;tabm<Space>
-nnoremap td  ;tabclose<CR>
+nnoremap th  :tabfirst<CR>
+nnoremap tk  :tabnext<CR>
+nnoremap tj  :tabprev<CR>
+nnoremap tl  :tablast<CR>
+nnoremap tt  :tabedit<Space>
+"nnoremap tn  :tabnext<Space>
+nnoremap tm  :tabm<Space>
+nnoremap td  :tabclose<CR>
 
 "" Aliases for Copy pasting between terminal and mac.
-vmap <leader>c ;w !pbcopy<CR><CR>
-vmap <F2> ;w !pbcopy<CR><CR>
+vmap <leader>c :w !pbcopy<CR><CR>
+vmap <F2> :w !pbcopy<CR><CR>
 vmap <leader>p <Esc>;set paste<CR>;r !pbpaste<CR>;set nopaste<CR>
 
 "" Auto Tabularize Tables when using space
@@ -404,8 +404,8 @@ function! Preserve(command)
 endfunction
 
 "" Remove Trailing Whitespace
-nmap _$ ;call Preserve("%s/\\s\\+$//e")<CR>
-nmap _= ;call Preserve("normal gg=G")<CR>
+nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
+nmap _= :call Preserve("normal gg=G")<CR>
 autocmd BufWritePre *.txt,*.py,*.js,*.coffee,*.txt,*.rb,*.css,*.scss,*.html,*.erb,*.haml,*.yaml :call Preserve("%s/\\s\\+$//e")
 
 "" CtrlP
@@ -417,14 +417,14 @@ let g:ctrlp_working_path_mode = 'ra'
 
 
 " Nerd Toggle Hotkeys
-nmap <leader>s ;NERDTreeToggle<cr>
-nmap <C-S> ;NERDTreeToggle<cr>
-nmap <leader>sf ;NERDTreeFind<cr>
-nmap <leader>re ;so %<cr>
-map <TAB> ;BufExplorer<CR>
+nmap <leader>s :NERDTreeToggle<cr>
+nmap <C-S> :NERDTreeToggle<cr>
+nmap <leader>sf :NERDTreeFind<cr>
+nmap <leader>re :so %<cr>
+map <TAB> :BufExplorer<CR>
 
 " Tagbar
-nmap <leader>S ;TagbarToggle<cr>
+nmap <leader>S :TagbarToggle<cr>
 
 " Zencoding
 let g:user_zen_leader_key = '<leader>'
@@ -435,7 +435,7 @@ function! CopyAndClose()
   q!
 endfunction
 
-nmap <leader>cac ;call CopyAndClose()<CR>
+nmap <leader>cac :call CopyAndClose()<CR>
 
 " IndentConsistencyCopAutoCMD
 let g:indentconsistencycop_CheckOnLoad = 0
@@ -517,8 +517,8 @@ function! NumberToggle()
   endif
 endfunc
 
-nmap <leader>l ;call NumberToggle()<CR>
-nmap <leader>p ;set paste!<CR>
+nmap <leader>l :call NumberToggle()<CR>
+nmap <leader>p :set paste!<CR>
 " Movement on Wrapped lines.
 nmap j gj
 nmap k gk
