@@ -336,9 +336,11 @@ noremap <C-left> ;bprev<CR>
 noremap <C-right> ;bnext<CR>
 
 "" Some system wide fixes.
+
 imap <C-d> <Del>
-imap <C-a> _
-imap <C-e> $
+imap <C-a> <Esc>^i
+imap <C-e> <Esc>$a
+imap jj <Esc>
 
 "" Git
 map <leader>g ;Git
