@@ -371,7 +371,7 @@ nnoremap tn  :tabnext<CR>
 nnoremap tp  :tabprev<CR>
 nnoremap tl  :tablast<CR>
 nnoremap tt  :tabedit<Space>
-nnoremap tn  :tabnew<CR>
+nnoremap tc  :tabnew<CR>
 nnoremap tm  :tabm<Space>
 nnoremap tx  :tabclose<CR>
 
