@@ -366,14 +366,14 @@ set directory=~/.vim/_temp/      " where to put swap files.
 
 
 "" Tabs
-nnoremap th  :tabfirst<CR>
-nnoremap tk  :tabnext<CR>
-nnoremap tj  :tabprev<CR>
+nnoremap tf  :tabfirst<CR>
+nnoremap tn  :tabnext<CR>
+nnoremap tp  :tabprev<CR>
 nnoremap tl  :tablast<CR>
 nnoremap tt  :tabedit<Space>
-"nnoremap tn  :tabnext<Space>
+nnoremap tn  :tabnew<CR>
 nnoremap tm  :tabm<Space>
-nnoremap td  :tabclose<CR>
+nnoremap tx  :tabclose<CR>
 
 "" Aliases for Copy pasting between terminal and mac.
 vmap <leader>c :w !pbcopy<CR><CR>
