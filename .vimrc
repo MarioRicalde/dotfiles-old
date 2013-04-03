@@ -30,13 +30,6 @@ set visualbell                    " Sssshh!
 set undofile                      " Persistent Undo Hisotry
 set undodir=~/.vim/_undo
 
-" Change ; into :
-" Using : for everything in Vim will end up hurting your hands on the long
-" run. So why not just use a single-key combo? This swaps : with ; and vicev.
-nnoremap ; :
-nnoremap : ;
-vnoremap ; :
-vnoremap : ;
 
 "" Wildmenu settings
 set wildmode=full                                                              " command completion works with tab.
