@@ -53,16 +53,6 @@ set backspace=indent,eol,start  " backspace through everything in insert mode
 set autoindent                  " automatically indent
 set scrolloff=3                 " don't show search results as the first line
 
-" Show Invisible Characters
-set list                          " Show invisible characters
-set listchars=""                  " Reset the listchars
-set lcs=tab:˒\ ,eol:˓,nbsp:%
-set listchars+=trail:˒            " show trailing spaces as dots
-set listchars+=extends:>          " The character to show in the last column when wrap is
-                                  " off and the line continues beyond the right of the screen
-set listchars+=precedes:<         " The character to show in the last column when wrap is
-                                  " off and the line continues beyond the right of the screen
-
 "" Searching
 set hlsearch                                         " highlight matches
 set incsearch                                        " incremental searching
