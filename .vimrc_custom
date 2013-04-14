@@ -1,1 +1,5 @@
 " System Specific Changes and Overrides.
+if has('macunix')
+  set cursorline
+  set colorcolumn=80,100            " 80 being the "alright, watch out" and 100 the "stahp!".
+endif
