@@ -13,7 +13,7 @@
     ln -s ~/dotfiles/.vimrc ~/.vimrc
     ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
     ln -s ~/dotfiles/.gitignore ~/.gitignore
-    ln -s ~/dotfiles/.vimrc_custom ~/.vimrc_custom
+    ln -s ~/dotfiles/.vimrc_system ~/.vimrc_system
     git config --global core.excludesfile ~/.gitignore
     brew install ctags
 
