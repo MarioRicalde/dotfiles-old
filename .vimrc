@@ -13,7 +13,7 @@ set hidden                        " Allow Buffers to be hidden without save.
 set history=10000                 " Command History
 set t_ti= t_te=                   " Prevent Vim from clobbering the scrollback buffer.
 set mouse=a                       " Support for mouse
-set synmaxcol=2048                " Syntax coloring lines that are too long just slows down the world
+set synmaxcol=300                 " Syntax coloring lines that are too long just slows down the world
 set switchbuf=useopen             " How New Buffers Open [split, newtab, useopen]
 set encoding=utf-8                " Set default encoding to UTF-8
 set ttyfast                       " Fast Terminal, sends more characters.
@@ -523,4 +523,4 @@ cnoremap <Esc>f <S-Right>
 cnoremap <Esc>d <S-right><Delete>
 cnoremap <C-g>  <C-c>
 
-source ~/.vimrc_custom
+source ~/.vimrc_system
