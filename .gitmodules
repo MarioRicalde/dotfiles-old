@@ -87,7 +87,7 @@
 	url = http://github.com/kuroir/stab.vim.git
 [submodule ".vim/bundle/helpers/IndentConsistencyCop"]
 	path = .vim/bundle/helpers/IndentConsistencyCop
-	url = http://github.com/vim-scripts/IndentConsistencyCop.git
+	url = http://github.com/kuroir/IndentConsistencyCop.git
 [submodule ".vim/bundle/helpers/IndentConsistencyCopCmds"]
 	path = .vim/bundle/helpers/IndentConsistencyCopCmds
 	url = http://github.com/vim-scripts/IndentConsistencyCopAutoCmds
