@@ -2,4 +2,15 @@
 if has('macunix')
   set cursorline
   set colorcolumn=80,100            " 80 being the "alright, watch out" and 100 the "stahp!".
+
+  " Show Invisible Characters
+  set list                          " Show invisible characters
+  set listchars=""                  " Reset the listchars
+  set lcs=tab:˒\ ,eol:˓,nbsp:%
+  set listchars+=trail:˒            " show trailing spaces as dots
+  set listchars+=extends:>          " The character to show in the last column when wrap is
+                                    " off and the line continues beyond the right of the screen
+  set listchars+=precedes:<         " The character to show in the last column when wrap is
+                                    " off and the line continues beyond the right of the screen
+
 endif
