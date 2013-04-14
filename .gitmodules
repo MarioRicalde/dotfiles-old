@@ -90,7 +90,7 @@
 	url = http://github.com/kuroir/IndentConsistencyCop.git
 [submodule ".vim/bundle/helpers/IndentConsistencyCopCmds"]
 	path = .vim/bundle/helpers/IndentConsistencyCopCmds
-	url = https://github.com/vim-scripts/IndentConsistencyCopAutoCmds.git
+	url = https://github.com/kuroir/IndentConsistencyCopAutoCmds.git
 [submodule ".vim/bundle/core/bufexplorer"]
 	path = .vim/bundle/core/bufexplorer
 	url = http://github.com/kuroir/bufexplorer.zip 
