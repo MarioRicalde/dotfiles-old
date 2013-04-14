@@ -21,8 +21,6 @@ set t_Co=256                      " enable 256-color mode.
 let &winheight = &lines * 2 / 10  " Set the window minimum height
 set laststatus=2                  " The first line is used by vim Powerline
 set timeoutlen=800                " Timout wait for <leader> keys
-set cursorline
-set colorcolumn=80,100            " 80 being the "Alright, watch out" and 100 the "STAHP!".
 set lazyredraw
 set ruler
 set number                        " Show line numbers
