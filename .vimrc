@@ -15,6 +15,8 @@ set t_ti= t_te=                   " Prevent Vim from clobbering the scrollback b
 set mouse=a                       " Support for mouse
 set synmaxcol=300                 " Syntax coloring lines that are too long just slows down the world
 set switchbuf=useopen             " How New Buffers Open [split, newtab, useopen]
+set splitbelow                    " New split will appear at the bottom.
+set splitright                    " New split will appear the right.
 set encoding=utf-8                " Set default encoding to UTF-8
 set ttyfast                       " Fast Terminal, sends more characters.
 set t_Co=256                      " enable 256-color mode.
@@ -365,7 +367,6 @@ nnoremap tx  :tabclose<CR>
 
 "" Aliases for Copy pasting between terminal and mac.
 vmap <leader>c :w !pbcopy<CR><CR>
-vmap <F2> :w !pbcopy<CR><CR>
 vmap <leader>p <Esc>;set paste<CR>;r !pbpaste<CR>;set nopaste<CR>
 
 "" Auto Tabularize Tables when using space
@@ -522,5 +523,9 @@ cnoremap <Esc>b <S-Left>
 cnoremap <Esc>f <S-Right>
 cnoremap <Esc>d <S-right><Delete>
 cnoremap <C-g>  <C-c>
+
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby', 'php'], 'passive_filetypes': [] }
+nmap<F2> :SyntasticCheck<CR>
+imap <F2> <ESC>:SyntasticCheck<CR>a
 
 source ~/.vimrc_system
