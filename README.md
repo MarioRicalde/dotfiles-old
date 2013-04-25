@@ -49,3 +49,5 @@ place them inside `experimental` directory.
 * Conditionally source Tmux Color Scheme based on what Terminal Says. [Info Here](https://github.com/ChrisJohnsen/tmux-MacOSX-paasteboard/issues/8)
 * Reorganize `.vimrc` file.
 * Add a `.vimrc.after` functionality.
+
+Follow me at [Twitter](http://twitter.com/mario_ricalde) or my [Site](http://mario.ricalde.mx).
