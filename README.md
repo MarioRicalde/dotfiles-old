@@ -50,4 +50,4 @@ place them inside `experimental` directory.
 * Reorganize `.vimrc` file.
 * Add a `.vimrc.after` functionality.
 
-Follow me at [Twitter](http://twitter.com/mario_ricalde) or my [Site](http://mario.ricalde.mx).
+Follow me at [Twitter](http://twitter.com/mario_ricalde) or at [mario.ricalde.mx](http://mario.ricalde.mx).
