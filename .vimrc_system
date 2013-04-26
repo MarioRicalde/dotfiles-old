@@ -1,5 +1,14 @@
-"  Mac Specific Overrides
-"
+" Gui Changes
+if has("gui_running")
+  "" The Powerline Hacks
+  set guifont=PragmataPro:h16
+  set linespace=2
+  autocmd VimResized * wincmd = " Automatically resize splits when resizing MacVim window
+  set lcs+=tab:˙\ ,eol:´
+endif
+
+
+" MacOSX Specific Overrides
 if has('macunix')
   set cursorline
   set colorcolumn=80,100            " 80 being the "alright, watch out" and 100 the "stahp!".

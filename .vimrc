@@ -79,14 +79,15 @@ hi IndentGuidesEven ctermbg=8
 command Dark set background=dark | !echo -e '\033]50;SetProfile=Dark\aColor Scheme Changed'
 command Light set background=light | !echo -e '\033]50;SetProfile=Light\aColor Scheme Changed'
 
+" Allow the . to execute once for each line of a visual selection
+vnoremap . :normal .<CR>
+
 "  TODO DOCUMENT FROM HERE
 "  TODO DOCUMENT FROM HERE
 "  TODO DOCUMENT FROM HERE
 "  TODO DOCUMENT FROM HERE
 let g:UltiSnipsDontReverseSearchPath="1"
 
-" Allow the . to execute once for each line of a visual selection
-vnoremap . :normal .<CR>
 " Jump to last non-space character in line ( opposite of ^ )
 map & g_
 
@@ -97,35 +98,26 @@ augroup vimrc
   au BufRead * normal zR  " Expand all folds by default.
   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
 augroup END
-au FileType make setlocal noexpandtab " In Makefiles, use real tabs, not tabs expanded to spaces
-au BufNewFile,BufRead *.json set ft=javascript "
+au BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,} | normal zR
+au BufNewFile,BufRead *.json set ft=javascript
+au FileType make setlocal noexpandtab
 au FileType python call StabHard(4)
 au FileType php call StabHard(4)
 au FileType html call StabHard(4)
 au FileType smarty call StabHard(4)
 au FileType html let g:syntastic_quiet_warnings=1
 au BufRead,BufNewFile *.scss set filetype=scss
-au FileType css,scss,html,haml setlocal isk+=-
+au FileType css,scss,html,haml setlocal iskeyword+=-
 au BufRead,BufNewFile *.phtml set filetype=phtml
-au BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,} | normal zR
 au BufRead,BufNewFile *.sass setlocal foldmethod=indent | normal zR
+" Colorizer
+let g:colorizer_auto_filetype='css,scss,sass,html,haml,tpl,js,coffee'
 
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
 au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
   \| exe "normal! g`\"" | endif
 
-
-""
-"" Gui Changes
-""
-if has("gui_running")
-  "" The Powerline Hacks
-  set guifont=PragmataPro
-  set linespace=2
-  autocmd VimResized * wincmd = " Automatically resize splits when resizing MacVim window
-  set lcs+=tab:˙\ ,eol:´
-endif
 
 "" Arrows are not acceptable on Normal mode.
 map <Left> <Nop>
@@ -432,8 +424,6 @@ let g:indentconsistencycop_CheckOnLoad = 0
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 0 " Dark Color Scheme
 
-" Colorizer
-let g:colorizer_auto_filetype='css,scss,sass,html,haml,tpl,js,coffee'
 
 " EasyMotion
 let g:EasyMotion_leader_key = '<Leader>'
