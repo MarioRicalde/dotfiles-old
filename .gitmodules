@@ -144,3 +144,9 @@
 [submodule ".vim/bundle/core/tagbar"]
 	path = .vim/bundle/core/tagbar
 	url = https://github.com/majutsushi/tagbar.git
+[submodule ".vim/bundle/text-helpers/expand-region"]
+	path = .vim/bundle/text-helpers/expand-region
+	url = https://github.com/terryma/vim-expand-region.git
+[submodule ".vim/bundle/helpers/YouCompleteMe"]
+	path = .vim/bundle/helpers/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git

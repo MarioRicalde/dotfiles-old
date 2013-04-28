@@ -15,6 +15,7 @@
     ln -s ~/dotfiles/.gitignore ~/.gitignore
     ln -s ~/dotfiles/.vimrc_system ~/.vimrc_system
     git config --global core.excludesfile ~/.gitignore
+    ./.vim/bundle/helpers/YouCompleteMe/install.sh
     brew install ctags
 
 # Updating Modules
