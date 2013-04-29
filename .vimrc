@@ -30,7 +30,6 @@ set visualbell                    " Sssshh!
 set undofile                      " Persistent Undo Hisotry
 set undodir=~/.vim/_undo
 
-
 "" Wildmenu settings
 set wildmode=full                                                              " command completion works with tab.
 set wildmenu                                                                   " make tab completion for files/buffers act like bash
@@ -61,8 +60,10 @@ set incsearch                                        " incremental searching
 set ignorecase                                       " searches are case insensitive...
 set smartcase                                        " ... unless they contain at least one capital letter
 set showmatch
+
 " Quick 'Replace' shortcut.
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+
 " Cleanup previous Highlights
 map <Space> :noh<CR>
 
@@ -82,11 +83,19 @@ command Light set background=light | !echo -e '\033]50;SetProfile=Light\aColor S
 " Allow the . to execute once for each line of a visual selection
 vnoremap . :normal .<CR>
 
+
+" Split separator
+highlight VertSplit ctermfg=11 ctermbg=none gui=none
+set fillchars+=vert:\ 
+
 "  TODO DOCUMENT FROM HERE
 "  TODO DOCUMENT FROM HERE
 "  TODO DOCUMENT FROM HERE
 "  TODO DOCUMENT FROM HERE
 let g:UltiSnipsDontReverseSearchPath="1"
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 " Jump to last non-space character in line ( opposite of ^ )
 map & g_

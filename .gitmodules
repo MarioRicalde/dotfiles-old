@@ -58,9 +58,6 @@
 [submodule ".vim/bundle/helpers/easymotion"]
 	path = .vim/bundle/helpers/easymotion
 	url = http://github.com/Lokaltog/vim-easymotion.git
-[submodule ".vim/bundle/helpers/supertab"]
-	path = .vim/bundle/helpers/supertab
-	url = http://github.com/ervandew/supertab.git
 [submodule ".vim/bundle/helpers/vroom"]
 	path = .vim/bundle/helpers/vroom
 	url = http://github.com/skalnik/vim-vroom.git

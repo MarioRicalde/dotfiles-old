@@ -18,6 +18,10 @@
     ./.vim/bundle/helpers/YouCompleteMe/install.sh
     brew install ctags
 
+# Extra things
+
+    gem install ghi
+
 # Updating Modules
 
     git submodule foreach git pull origin master
@@ -30,7 +34,6 @@
       it might ask you to do
     brew install mercurial
       which is a dependency.
-
 
 # Adding More Modules
 
