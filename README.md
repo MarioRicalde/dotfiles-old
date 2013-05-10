@@ -46,9 +46,6 @@
 
 Justs fork and do your thing. If you want me to merge into master, let me know.
 
-If you want to have your own plugins that you don't think anyone else will want
-place them inside `experimental` directory.
-
 # Pending Things I want to work on
 
 * Automatic Indent Detection
