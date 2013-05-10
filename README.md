@@ -8,14 +8,17 @@
     cd ~/dotfiles/
     git submodule init
     git submodule update
+    mv ~/.vim ~/.vim.bak
     ln -s ~/dotfiles/.vim ~/.vim
     ln -s ~/dotfiles/.ackrc ~/.ackrc
     ln -s ~/dotfiles/.vimrc ~/.vimrc
+    mv ~/.vimrc ~/.vimrc.bak
     ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
     ln -s ~/dotfiles/.gitignore ~/.gitignore
     ln -s ~/dotfiles/.vimrc_system ~/.vimrc_system
     git config --global core.excludesfile ~/.gitignore
-    ./.vim/bundle/helpers/YouCompleteMe/install.sh
+    cd ~/.vim/bundle/helpers/YouCompleteMe
+    ./install.sh
     brew install ctags
 
 # Extra things
