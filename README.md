@@ -20,6 +20,7 @@
     cd ~/.vim/bundle/helpers/YouCompleteMe
     ./install.sh
     brew install ctags
+    brew install reattach-to-user-namespace
 
 # Extra things
 
